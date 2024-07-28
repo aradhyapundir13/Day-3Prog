@@ -13,30 +13,37 @@ public class AddressBook {
         System.out.println("Enter User Lastname: ");
         String last_name = sc.nextLine();
 
-        System.out.println("Enter User Address: ");
-        String address = sc.nextLine();
+        if(memberinfo.containsKey(first_name+" "+last_name)){
+            System.out.println("Sorry This User Already Exists !!!");
+            System.out.println("");
+            return;
+        }
+        else{
+            System.out.println("Enter User Address: ");
+            String address = sc.nextLine();
 
-        System.out.println("Enter User City: ");
-        String city = sc.nextLine();
+            System.out.println("Enter User City: ");
+            String city = sc.nextLine();
 
-        System.out.println("Enter User State: ");
-        String state = sc.nextLine();
+            System.out.println("Enter User State: ");
+            String state = sc.nextLine();
 
-        System.out.println("Enter User ZIP: ");
-        int zip = sc.nextInt();
+            System.out.println("Enter User ZIP: ");
+            int zip = sc.nextInt();
 
-        System.out.println("Enter User Phone No: ");
-        long phone = sc.nextLong();
-        sc.nextLine();
+            System.out.println("Enter User Phone No: ");
+            long phone = sc.nextLong();
+            sc.nextLine();
 
-        System.out.println("Enter User Email: ");
-        String email = sc.nextLine();
+            System.out.println("Enter User Email: ");
+            String email = sc.nextLine();
 
-        CreateContact contact = new CreateContact();
-        contact.set(first_name,last_name,address,city,state,zip,phone,email);
-        memberinfo.put(first_name+" "+last_name,contact);
-        System.out.println("User Added !!!");
-        System.out.println("");
+            CreateContact contact = new CreateContact();
+            contact.set(first_name,last_name,address,city,state,zip,phone,email);
+            memberinfo.put(first_name+" "+last_name,contact);
+            System.out.println("User Added !!!");
+            System.out.println("");
+        }
     }
 
 
