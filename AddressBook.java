@@ -112,4 +112,17 @@ public class AddressBook {
             System.out.println("");
         }
     }
+
+    public static void addmultiplecontact(HashMap<String,CreateContact> memberinfo){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no of elements you want to add: ");
+        int no = sc.nextInt();
+
+        for(int i=1;i<=no;i++){
+            System.out.println("");
+            System.out.println("Enter Details for User "+i);
+            addcontact(memberinfo);
+        }
+
+    }
 }
